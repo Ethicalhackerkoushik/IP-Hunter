@@ -36,52 +36,43 @@ class set {
       system("chmod +x /usr/bin/trace");
     }
 
-    // copy files from IP-Tracer to .IP-Tracer directory.
+    // copy files from IP-Hunter to .IP-Hunter directory.
     if ($system=="termux") {
-      system("mkdir /data/data/com.termux/files/usr/share/IP-Tracer");
+      system("mkdir /data/data/com.termux/files/usr/share/IP-Hunter");
       system("chmod +x * *.* .*.*");
-      system("mv -v * *.* .*.* /data/data/com.termux/files/usr/share/IP-Tracer/");
+      system("mv -v * *.* .*.* /data/data/com.termux/files/usr/share/IP-Hunter/");
     } elseif ($system=="ubuntu") {
-      system("sudo mkdir /usr/share/IP-Tracer/");
+      system("sudo mkdir /usr/share/IP-Hunter/");
       system("sudo chmod +x * *.* .*.*");
-      system("sudo mv -v * *.* .*.* /usr/share/IP-Tracer/");
+      system("sudo mv -v * *.* .*.* /usr/share/IP-Hunter/");
     } else {
-      system("mkdir /usr/share/IP-Tracer");
+      system("mkdir /usr/share/IP-Hunter");
       system("chmod +x * *.* .*.*");
-      system("mv -v * *.* .*.* /usr/share/IP-Tracer/");
+      system("mv -v * *.* .*.* /usr/share/IP-Hunter/");
     }
     
     // removing IP-Tracer directory
     if ($system=="termux") {
-      system("cd .. && rm -rf IP-Tracer");
+      system("cd .. && rm -rf IP-Hunter");
     } elseif ($system=="ubuntu") {
-      system("cd .. && sudo rm -rf IP-Tracer");
+      system("cd .. && sudo rm -rf IP-Hunter");
     } else {
-      system("cd .. && rm -rf IP-Tracer");
+      system("cd .. && rm -rf IP-Hunter");
     }
   }
   function logo() {
     system("clear");
-    echo <<<EOL
-\033[01;33m
+echo "██╗██████╗       ██╗  ██╗██╗   ██╗███╗   ██╗████████╗███████╗██████╗ ";
+echo "██║██╔══██╗      ██║  ██║██║   ██║████╗  ██║╚══██╔══╝██╔════╝██╔══██╗";
+echo "██║██████╔╝█████╗███████║██║   ██║██╔██╗ ██║   ██║   █████╗  ██████╔╝";
+echo "██║██╔═══╝ ╚════╝██╔══██║██║   ██║██║╚██╗██║   ██║   ██╔══╝  ██╔══██╗";
+echo "██║██║           ██║  ██║╚██████╔╝██║ ╚████║   ██║   ███████╗██║  ██║";
+echo "╚═╝╚═╝           ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝   ╚═╝   ╚══════╝╚═╝  ╚═╝";
+echo "                                                                     ";
 
 
-\033[01;31m      _\033[01;33m ____    _
-     \033[01;31m(_)\033[01;33m  _ \  | |_ _ __ __ _  ___ ___ _ __
-     | | |_) | | __| '__/ _` |/ __/ _ \ '__|
-     | |  __/  | |_| | | (_| | (_|  __/ |
-     |_|_|      \__|_|  \__,_|\___\___|_|
-
-
-    \033[01;37m}\033[01;31m--------------------------------------\033[01;37m{
- }\033[01;31m------------- \033[01;32mTrack IPLocation\033[01;31m -------------\033[01;37m{
-    }\033[01;31m--------------------------------------\033[01;37m{
-
-\033[00m
-EOL;
-
-    if (file_exists("/usr/bin/ip-tracer") || file_exists("/data/data/com.termux/files/usr/bin/ip-tracer")) {
-      echo "\033[01;32m      IP-Tracer installed Successfully !!!\033[00m\n";
+    if (file_exists("/usr/bin/ip-hunter") || file_exists("/data/data/com.termux/files/usr/bin/ip-hunter")) {
+      echo "\033[01;32m      IP-Hunter installed Successfully !!!\033[00m\n";
       echo <<<EOL
 
 \033[01;37m ----------------------------------------------
@@ -97,7 +88,7 @@ EOL;
 
 EOL;
     } else {
-      echo "\n\n\033[01;31m  Sorry IP-Tracer is not installed !!!\033[00m";
+      echo "\n\n\033[01;31m  Sorry IP-Hunter is not installed !!!\033[00m";
     }
   }
 }
